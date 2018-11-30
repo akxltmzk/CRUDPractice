@@ -26,8 +26,6 @@ $(function () {
   })
 
   $('#delete').on('click',()=>{
-    console.log('delete!');
-    
     let id = $('#topicId').val();
 
     $.ajax({

@@ -18,14 +18,6 @@ router.post('/create',(req,res)=>{
     })
 })
 
-// update
-router.get('/update/:topicId',(req,res)=>{
-  connection.query(`SELECT * FROM topic WHERE id=?`,[req.params.topicId],(err,rows)=>{
-    let topic =rows[0];
-    res.render('update',{topic:topic,topicId:topic.id});
-  })
-})
-
 router.put('/update/:topicId',(req,res)=>{
   connection.query(`UPDATE topic SET title=?,description=? WHERE id=?`,
     [req.body.title,req.body.description,req.params.topicId],(err,rows)=>{
