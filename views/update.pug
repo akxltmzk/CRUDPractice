@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2 Welcome To Update Page!
+  br
+  form(action='/topic/update/'+topicId, method='post')
+    p
+      input(type='text', name='title', placeholder= topic.title)
+    p
+      textarea(name='description', placeholder= topic.description)
+    p
+      input(type='submit')
+
+
+ 
+    
+
+

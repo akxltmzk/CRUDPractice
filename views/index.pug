@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  img(src='/pictures/DigitalHippy.png ', style='width:300px; display:block; margin-top:10px')
+  h1 
+    a(href='/') WELCOME!!
+  p
+  div
+    each topic in topics
+      a(class='menu-link' href='/topic/'+topic.title data-id=topic.id)= topic.title
+  p
+  div
+    input(type="button" id="create" value="CREATE")
+    if(topic)
+      input(type="hidden" id="topicId" value=topic.id)
+      input(type="button" id="update" value="UPDATE")
+      input(type="button" id="delete" value="DELETE")   
+  p.update-topic-form
+    if(topic)
+      input(type="text" id="title" class="editable input-type01" value=topic.title disabled)
+      textarea(id="description" class="editable textarea-type01" disabled)= topic.description      
+    else
+      h2 Welcome
+      p Welcome, My Website
+    
+
+
